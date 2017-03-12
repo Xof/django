@@ -192,7 +192,7 @@ class BaseDatabaseSchemaEditor:
         """Return a field's effective database default value."""
         if field.has_default():
             default = field.get_default()
-        elif not field.null and field.blank and field.empty_strings_allowed:
+        elif not field.null and field.empty_strings_allowed:
             if field.get_internal_type() == "BinaryField":
                 default = bytes()
             else:
